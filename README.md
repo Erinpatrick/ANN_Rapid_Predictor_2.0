@@ -26,7 +26,7 @@ DRTT fibers activated by a bipolar electrode
    ```
 
    **Selective Download (Suggested):**
-   If you only need specific electrode files (all of the electrode files are about 35 GB), you can pull them individually using the `-I` (include) flag. For example:
+   If you only need specific electrode files (or want to save space; each electrode file is roughly 1GB), you can pull them individually using the `-I` (include) flag. For example:
    ```bash
    git lfs pull -I "electrodes/directed/monopolar/bsc_directional_anisotropic_monopolar_01(a,b,c)2(-a,b,c)3.txt"
    ```
