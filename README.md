@@ -2,6 +2,9 @@
 
 Computational models are powerful tools that can enable the optimization of deep brain stimulation (DBS). To enhance the clinical practicality of these models, their computational expense and required technical expertise must be minimized. An important aspect of DBS models is the prediction of neural activation in response to electrical stimulation. Existing rapid predictors of activation simplify implementation and reduce prediction runtime, but at the expense of accuracy. We sought to address this issue by leveraging the speed and generalization abilities of artificial neural networks (ANNs) to create a novel predictor of neural fiber activation in response to DBS.
 
+<img width="1916" height="1042" alt="image" src="https://github.com/user-attachments/assets/a006e257-c8ec-404d-bf50-9a2603bc3709" />
+DRTT fibers activated by a bipolar electrode
+
 ## Installation
 
 1. Clone this repository:
