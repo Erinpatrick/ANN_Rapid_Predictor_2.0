@@ -2,6 +2,9 @@
 
 Computational models are powerful tools that can enable the optimization of deep brain stimulation (DBS). To enhance the clinical practicality of these models, their computational expense and required technical expertise must be minimized. An important aspect of DBS models is the prediction of neural activation in response to electrical stimulation. Existing rapid predictors of activation simplify implementation and reduce prediction runtime, but at the expense of accuracy. We sought to address this issue by leveraging the speed and generalization abilities of artificial neural networks (ANNs) to create a novel predictor of neural fiber activation in response to DBS.
 
+<img width="1916" height="1042" alt="image" src="https://github.com/user-attachments/assets/a006e257-c8ec-404d-bf50-9a2603bc3709" />
+DRTT fibers activated by a bipolar electrode
+
 ## Installation
 
 1. Clone this repository:
@@ -11,19 +14,19 @@ Computational models are powerful tools that can enable the optimization of deep
    ```
 
 2. Pull example tracks:
-   To run the quick start examples, you'll need the tract files. You can pull just these files (~246 KB) without downloading the entire large file history:
+   To run the quick start examples, you'll need the tract files. You can pull just these files without downloading the entire large file history:
    ```bash
    git lfs pull -I "example_tracks/**"
    ```
 
-3. **(Important)** Pull large model and electrode files:
-   This repository uses Git LFS for large files. Run the following command to download all remaining necessary files (approx. 669 MB):
+3. Pull large model and electrode files:
+   This repository uses Git LFS for large files. Run the following command to download all remaining necessary files:
    ```bash
    git lfs pull
    ```
 
-   **Selective Download:**
-   If you only need specific electrode files (to save bandwidth/disk space), you can pull them individually using the `-I` (include) flag. For example:
+   **Selective Download (Suggested):**
+   If you only need specific electrode files (or want to save space; each electrode file is roughly 1GB), you can pull them individually using the `-I` (include) flag. For example:
    ```bash
    git lfs pull -I "electrodes/directed/monopolar/bsc_directional_anisotropic_monopolar_01(a,b,c)2(-a,b,c)3.txt"
    ```
