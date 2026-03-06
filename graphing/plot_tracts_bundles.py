@@ -443,7 +443,7 @@ def render(fibers, threshold_map, voltage, electrode_center, bundle_ranges,
     for bname in bundle_ranges:
         style = BUNDLE_STYLES.get(bname, DEFAULT_BUNDLE_STYLE)
         act_color, inact_color, act_opacity, inact_opacity = style
-        display_name = bname.replace("L_", "").replace("_voxel", "")
+        display_name = bname.removeprefix("L_").removesuffix("_voxel")
 
         bx, by, bz = build_merged_trace(fibers, bundle_active[bname])
         if bx is not None:
