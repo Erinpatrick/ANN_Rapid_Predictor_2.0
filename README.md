@@ -11,16 +11,33 @@ DRTT, ML, and PTR fibers activated by a bipolar electrode
 1. Download the repository:
    Go to [https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0), click the green **Code** button, and select **Download ZIP**. Extract the ZIP to a location of your choice, then open a terminal in the extracted folder (the one containing `run/`, `graphing/`, etc.).
 
-2. Download large data files from the GitHub Release:
-   Electrode files (~1.2 GB each) and example tract files are hosted on the [Releases page](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0/releases/tag/v1.0-data). Download the files you need and place them in the correct directories:
+2. Download large data files from GitHub Releases:
+   Electrode files (~1.2 GB each) and example tract files are too large for the repository itself and are hosted as GitHub Release assets. Each electrode category has its own release page. Download only the files you need and place them in the correct directories.
 
-   | Release asset | Place in |
-   |---|---|
-   | `L_DRTT_voxel.txt`, `L_ML_voxel.txt`, `L_PTR_voxel.txt`, `L_combined_DRTT_ML_PTR_voxel.txt` | `example_tracks/` |
-   | `3387_anisotropic_monopolar_01-23.txt` | `electrodes/medtronic_3387/monopolar/` |
-   | `3387_anisotropic_bipolar_0-12+3.txt` | `electrodes/medtronic_3387/asymmetric_bipolar/` |
-   | `3387_anisotropic_tripolar_-0+1-23.txt`, `3387_anisotropic_tripolar_-01-2+3.txt` | `electrodes/medtronic_3387/tripolar/` |
-   | `3387_anisotropic_quadrupolar_-0+1-2+3.txt` | `electrodes/medtronic_3387/quadrupolar/` |
+   **Example Tracks** (required for Quick Start):
+   Download from [Example Tracks & Requirements](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0/releases/tag/example-tracks) and place into `example_tracks/`.
+
+   **Medtronic 3387 Electrodes** — download from the relevant release and place into the listed directory:
+
+   | Configuration | Release | Place in |
+   |---|---|---|
+   | Monopolar | [3387-monopolar](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0/releases/tag/3387-monopolar) | `electrodes/medtronic_3387/monopolar/` |
+   | Bipolar | [3387-bipolar](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0/releases/tag/3387-bipolar) | `electrodes/medtronic_3387/bipolar/` |
+   | Asymmetric Bipolar | [3387-asymmetric-bipolar](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0/releases/tag/3387-asymmetric-bipolar) | `electrodes/medtronic_3387/asymmetric_bipolar/` |
+   | Asymmetric Double Monopolar | [3387-asymmetric-double-monopolar](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0/releases/tag/3387-asymmetric-double-monopolar) | `electrodes/medtronic_3387/asymmetric_double_monopolar/` |
+   | Double Monopolar | [3387-monopolar-double](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0/releases/tag/3387-monopolar-double) | `electrodes/medtronic_3387/monopolar_double/` |
+   | Triple Monopolar | [3387-monopolar-triple](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0/releases/tag/3387-monopolar-triple) | `electrodes/medtronic_3387/monopolar_triple/` |
+   | Quadruple Monopolar | [3387-monopolar-quadruple](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0/releases/tag/3387-monopolar-quadruple) | `electrodes/medtronic_3387/monopolar_quadruple/` |
+   | Tripolar | [3387-tripolar](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0/releases/tag/3387-tripolar) | `electrodes/medtronic_3387/tripolar/` |
+   | Quadrupolar | [3387-quadrupolar](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0/releases/tag/3387-quadrupolar) | `electrodes/medtronic_3387/quadrupolar/` |
+
+   **BSC Directed Electrodes:**
+
+   | Configuration | Release | Place in |
+   |---|---|---|
+   | Monopolar | [directed-monopolar](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0/releases/tag/directed-monopolar) | `electrodes/directed/monopolar/` |
+   | Bipolar | [directed-bipolar](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0/releases/tag/directed-bipolar) | `electrodes/directed/bipolar/` |
+   | Double Monopolar | [directed-monopolar-double](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0/releases/tag/directed-monopolar-double) | `electrodes/directed/monopolar_double/` |
 
    You only need to download the electrode configuration(s) you plan to use.
 
