@@ -9,38 +9,22 @@ DRTT, ML, and PTR fibers activated by a bipolar electrode
 ## Installation
 
 1. Download the repository:
-   Go to [https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0), click the green **Code** button, and select **Download ZIP**. Extract the ZIP to a location of your choice, then open a terminal in the extracted folder.
+   Go to [https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0), click the green **Code** button, and select **Download ZIP**. Extract the ZIP to a location of your choice, then open a terminal in the extracted folder (the one containing `run/`, `graphing/`, etc.).
 
-2. Connect the folder to GitHub (required for pulling LFS files):
-   Open a terminal **inside the extracted folder** (the one containing `run/`, `graphing/`, etc.) and run:
-   ```bash
-   git init
-   git remote add origin https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0.git
-   git fetch origin
-   git reset origin/main
-   ```
-   This links the folder to the repository without downloading or overwriting any files.
+2. Download large data files from the GitHub Release:
+   Electrode files (~1.2 GB each) and example tract files are hosted on the [Releases page](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0/releases/tag/v1.0-data). Download the files you need and place them in the correct directories:
 
-3. Pull example tracks:
-   To run the quick start examples, you'll need the tract files stored in Git LFS. After connecting to GitHub (step 2):
-   ```bash
-   git lfs install
-   git lfs pull -I "example_tracks/**"
-   ```
+   | Release asset | Place in |
+   |---|---|
+   | `L_DRTT_voxel.txt`, `L_ML_voxel.txt`, `L_PTR_voxel.txt`, `L_combined_DRTT_ML_PTR_voxel.txt` | `example_tracks/` |
+   | `3387_anisotropic_monopolar_01-23.txt` | `electrodes/medtronic_3387/monopolar/` |
+   | `3387_anisotropic_bipolar_0-12+3.txt` | `electrodes/medtronic_3387/asymmetric_bipolar/` |
+   | `3387_anisotropic_tripolar_-0+1-23.txt`, `3387_anisotropic_tripolar_-01-2+3.txt` | `electrodes/medtronic_3387/tripolar/` |
+   | `3387_anisotropic_quadrupolar_-0+1-2+3.txt` | `electrodes/medtronic_3387/quadrupolar/` |
 
-4. Pull large model and electrode files:
-   This repository uses Git LFS for large files. Run the following command to download all remaining necessary files:
-   ```bash
-   git lfs pull
-   ```
+   You only need to download the electrode configuration(s) you plan to use.
 
-   **Selective Download (Suggested):**
-   If you only need specific electrode files (or want to save space; each electrode file is roughly 1GB), you can pull them individually using the `-I` (include) flag. For example:
-   ```bash
-   git lfs pull -I "electrodes/directed/monopolar/bsc_directional_anisotropic_monopolar_01(a,b,c)2(-a,b,c)3.txt"
-   ```
-
-5. Create a Python 3.10 virtual environment and install dependencies:
+3. Create a Python 3.10 virtual environment and install dependencies:
 
    > **Important:** Python 3.10 is required. TensorFlow 2.15 does not support Python 3.11 or newer. If you have multiple Python versions installed, use the `py -3.10` launcher (Windows) or `python3.10` (Linux/Mac) to target the correct version.
 
