@@ -11,14 +11,15 @@ DRTT, ML, and PTR fibers activated by a bipolar electrode
 1. Download the repository:
    Go to [https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0), click the green **Code** button, and select **Download ZIP**. Extract the ZIP to a location of your choice, then open a terminal in the extracted folder.
 
-2. Connect the folder to GitHub (optional, for pulling updates and large files):
+2. Connect the folder to GitHub (required for pulling LFS files):
+   Open a terminal **inside the extracted folder** (the one containing `run/`, `graphing/`, etc.) and run:
    ```bash
-   cd ANN_Rapid_Predictor_2.0
    git init
    git remote add origin https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0.git
    git fetch origin
-   git checkout -b main origin/main
+   git reset origin/main
    ```
+   This links the folder to the repository without downloading or overwriting any files.
 
 3. Pull example tracks:
    To run the quick start examples, you'll need the tract files stored in Git LFS. After connecting to GitHub (step 2):
