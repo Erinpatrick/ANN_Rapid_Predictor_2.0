@@ -8,19 +8,26 @@ DRTT, ML, and PTR fibers activated by a bipolar electrode
 
 ## Installation
 
-1. Clone this repository:
+1. Download the repository:
+   Go to [https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0), click the green **Code** button, and select **Download ZIP**. Extract the ZIP to a location of your choice, then open a terminal in the extracted folder.
+
+2. Connect the folder to GitHub (optional, for pulling updates and large files):
    ```bash
-   git clone https://github.com/BenNorbom/ANN_Rapid_Predictor_2.0.git
    cd ANN_Rapid_Predictor_2.0
+   git init
+   git remote add origin https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0.git
+   git fetch origin
+   git checkout -b main origin/main
    ```
 
-2. Pull example tracks:
-   To run the quick start examples, you'll need the tract files. You can pull just these files without downloading the entire large file history:
+3. Pull example tracks:
+   To run the quick start examples, you'll need the tract files stored in Git LFS. After connecting to GitHub (step 2):
    ```bash
+   git lfs install
    git lfs pull -I "example_tracks/**"
    ```
 
-3. Pull large model and electrode files:
+4. Pull large model and electrode files:
    This repository uses Git LFS for large files. Run the following command to download all remaining necessary files:
    ```bash
    git lfs pull
@@ -32,7 +39,7 @@ DRTT, ML, and PTR fibers activated by a bipolar electrode
    git lfs pull -I "electrodes/directed/monopolar/bsc_directional_anisotropic_monopolar_01(a,b,c)2(-a,b,c)3.txt"
    ```
 
-4. Create a Python 3.10 virtual environment and install dependencies:
+5. Create a Python 3.10 virtual environment and install dependencies:
 
    > **Important:** Python 3.10 is required. TensorFlow 2.15 does not support Python 3.11 or newer. If you have multiple Python versions installed, use the `py -3.10` launcher (Windows) or `python3.10` (Linux/Mac) to target the correct version.
 
