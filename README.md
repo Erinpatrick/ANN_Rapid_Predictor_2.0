@@ -45,12 +45,23 @@ DRTT, ML, and PTR fibers activated by a bipolar electrode
 
    > **Important:** Python 3.10 is required. TensorFlow 2.15 does not support Python 3.11 or newer. If you have multiple Python versions installed, use the `py -3.10` launcher (Windows) or `python3.10` (Linux/Mac) to target the correct version.
 
-   **Windows:**
-   ```bash
+   **Windows (PowerShell):**
+   ```powershell
    py -3.10 -m venv .venv
    .venv\Scripts\activate
    pip install -r requirements.txt
    ```
+
+   > **Troubleshooting — "running scripts is disabled on this system":**
+   > If `.venv\Scripts\activate` fails with a `PSSecurityError`, PowerShell's execution policy is blocking scripts. Run the following **once** and then retry:
+   > ```powershell
+   > Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+   > ```
+   > Alternatively, skip activation and call pip/python through the venv directly:
+   > ```powershell
+   > .venv\Scripts\pip install -r requirements.txt
+   > .venv\Scripts\python run/dti_ann_LUT.py ...
+   > ```
 
    **Linux/Mac:**
    ```bash
