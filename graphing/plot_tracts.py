@@ -265,7 +265,10 @@ ___PW_OPTIONS___
     </select>
   </label>
   <label>Voltage (V):
-    <input id="voltage-input" type="number" value="___DEFAULT_VOLTAGE___" step="0.1" min="0">
+    <input id="voltage-input" type="number" value="___DEFAULT_VOLTAGE___" step="0.1" min="0" oninput="syncMA(this)">
+  </label>
+  <label>Current (mA):
+    <input id="ma-input" type="number" value="___DEFAULT_MA___" step="0.1" min="0" oninput="syncV(this)">
   </label>
   <button onclick="buildPlot()">Apply</button>
   <span id="status"></span>
@@ -276,6 +279,16 @@ var FIBERS = ___FIBERS_DATA___;
 var THRESHOLDS = ___THRESHOLDS_DATA___;
 var EFIELD_TRACES = ___EFIELD_DATA___;
 var SHOW_AXES = ___SHOW_AXES___;
+var V_TO_MA = 1.123;
+
+function syncMA(vInput) {
+  var v = parseFloat(vInput.value);
+  if (!isNaN(v)) document.getElementById("ma-input").value = (v * V_TO_MA).toFixed(3);
+}
+function syncV(maInput) {
+  var ma = parseFloat(maInput.value);
+  if (!isNaN(ma)) document.getElementById("voltage-input").value = (ma / V_TO_MA).toFixed(4);
+}
 
 function buildMergedTrace(indices, color, width, opacity, name, visible, legendgroup) {
   var x = [], y = [], z = [];
@@ -335,7 +348,7 @@ function buildPlot() {
       ? {visible:true, showticklabels:true, showgrid:true, zeroline:true, title:""}
       : {visible:false, showticklabels:false, showgrid:false, zeroline:false};
     var layout = {
-      title: {text: "Pulse Width: " + pwKey + " \u03bcs  |  Threshold: " + voltage + " V", x: 0.5, xanchor: "center"},
+      title: {text: "Pulse Width: " + pwKey + " \u03bcs  |  Threshold: " + voltage.toFixed(4) + " V  /  " + (voltage * V_TO_MA).toFixed(3) + " mA", x: 0.5, xanchor: "center"},
       scene: {
         camera: {eye: {x:1.5, y:1.5, z:1.5}},
         aspectmode: "data",
@@ -373,6 +386,9 @@ function buildPlot() {
 document.getElementById("voltage-input").addEventListener("keypress", function(e) {
   if (e.key === "Enter") buildPlot();
 });
+document.getElementById("ma-input").addEventListener("keypress", function(e) {
+  if (e.key === "Enter") buildPlot();
+});
 buildPlot();
 </script>
 </body>
@@ -404,6 +420,7 @@ def write_interactive_html(path, fiber_coords, all_thresholds, pw_options,
     html = html.replace("___EFIELD_DATA___", efield_traces_json)
     html = html.replace("___SHOW_AXES___", "true" if show_axes else "false")
     html = html.replace("___DEFAULT_VOLTAGE___", str(default_voltage))
+    html = html.replace("___DEFAULT_MA___", str(round(default_voltage * 1.123, 3)))
     with open(path, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"Wrote interactive HTML: {path}")
