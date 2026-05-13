@@ -86,10 +86,10 @@ DRTT, ML, and PTR fibers activated by a bipolar electrode
 ```bash
 python run/dti_ann_LUT.py \
     electrodes/medtronic_3387/monopolar/3387_anisotropic_monopolar_01-23.txt \
-    example_tracks/whole_brain.txt \
-    models/ann_19_reg \
+    example_tracks/L_DRTT_voxel.txt \
+    models/cnn_103_class \
     run/results.json \
-    ssd dti 38 50 30 reg
+    ssd dti 167 223 147 class
 ```
 
 See [run/README.md](run/README.md) for detailed argument descriptions.
