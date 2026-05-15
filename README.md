@@ -59,6 +59,9 @@ DRTT, ML, and PTR fibers activated by a bipolar electrode
    ```
 
    Then create the virtual environment and install dependencies:
+
+   > **Before running the next command:** Make sure you have downloaded `requirements.txt` from the [Example Tracks & Requirements](https://github.com/Erinpatrick/ANN_Rapid_Predictor_2.0/releases/tag/example-tracks) release and placed it in the root project folder.
+
    ```powershell
    py -3.10 -m venv .venv
    .venv\Scripts\activate
